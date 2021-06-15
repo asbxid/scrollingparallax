@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo"> Jungle</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#destination">Destination</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="text"><span>It's time for a new</span><br>Adventure</h2>
+        <img src="img/bird1.png" id="bird1">
+        <img src="img/bird2.png" id="bird2">
+        <img src="img/forest.png" id="forest">
+        <a href="#parallax" id="btn" class="btn">Explore</a>
+        <img src="img/rocks.png" id="rocks">
+        <img src="img/water.png" id="water">      
+    </section>
+    <div class="sec" id="parallax">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum consequatur dolorum quidem? Illum ducimus quaerat perferendis delectus similique labore in tenetur magnam minima nemo rerum, ex error iure rem cupiditate iste repellendus ipsum enim dolor amet. Possimus fugiat impedit doloremque fugit iusto exercitationem quos dolorum eaque, laudantium quod dolores soluta. <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptate fugit natus tempore, ipsum velit minus voluptatum amet perferendis earum quam molestias corrupti vero illo, animi, ad culpa sunt odio nam magnam praesentium. Sit, ullam, eius inventore corrupti eaque officiis ex ad labore iure temporibus, pariatur rerum ipsum optio dolor suscipit quibusdam fugit. Aspernatur voluptates fugit temporibus in voluptate, veniam a obcaecati qui porro, ut aperiam esse distinctio modi sint nemo vel possimus. Magni, provident! Inventore quis sapiente soluta at error esse quibusdam voluptatem illo molestias consequatur ex deserunt rerum ut modi eaque, velit magnam sequi minima odio? Minima, officiis? <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestiae laudantium quia minus, numquam odio praesentium repellendus ea ipsa dignissimos voluptas officiis aut saepe ipsam hic possimus, illum, nisi voluptatum! <br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, consectetur! Libero, doloremque? Minus aspernatur quasi, porro qui corrupti vitae officiis recusandae nam doloremque. Cupiditate dolore quam officiis ipsa maiores quibusdam aliquid, consequatur rerum ex obcaecati numquam similique deleniti, quo qui. Quidem, repellendus voluptates. Recusandae soluta ab, voluptatum eos adipisci placeat nisi natus labore eligendi nemo cum dolorum ea, reiciendis similique facilis. Adipisci porro distinctio, error repudiandae iste ullam dicta odit.</p>
+    </div>
+
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let btn = document.getElementById('btn');
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+
+            text.style.top = 50 + value * -0.5 + '%';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * 2 + 'px';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * -5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -0.12+ 'px';
+            forest.style.top = value * 0.25 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
